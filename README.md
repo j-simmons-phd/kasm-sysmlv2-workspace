@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This repo provides a workspace for Mach 30 volunteers to work on Python projects based on the [Ansible based template for KASM Ubuntu Focal Images](https://github.com/j-simmons-phd/kasm-core-focal-template) template provided by @j-simmons-phd and upgraded to Ubuntu Noble Numbat manually.  The workspace is configured with the following software:
+This repo provides a workspace for SysML v2 textual notation modeling based on the [Ansible based template for KASM Ubuntu Focal Images](https://github.com/j-simmons-phd/kasm-core-focal-template) template provided by @j-simmons-phd and upgraded to Ubuntu Noble Numbat manually.  The workspace is configured with the following software:
 
 - git cli 2.47.0
 - [Keychain](https://www.funtoo.org/Keychain) 2.8.5
@@ -15,6 +15,7 @@ This repo provides a workspace for Mach 30 volunteers to work on Python projects
     - [Pint](https://pint.readthedocs.io/en/stable/)
 - VS Code with the following extensions (note, auto-updates are disabled)
     - [Python extension by Microsoft](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+    - [SysIDE CE](https://marketplace.visualstudio.com/items?itemName=sensmetry.sysml-2ls)
 
 ## How to Use this Repo
 
