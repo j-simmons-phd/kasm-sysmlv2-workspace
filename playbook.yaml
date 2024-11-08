@@ -195,5 +195,61 @@
       state: absent
       remove: yes 
 
+-
+  # install GraphViz
+  hosts: localhost
+  connection: local
+  gather_facts: yes
+  tags:
+  - install_generator_plantuml
+  - install_doctools
+
+  vars:
+    jdk_version: 2:1.21-75
+    graphviz_version_expected: "dot - graphviz version 2.50.0 (20211204.2007)"
+
+  tasks:
+  - name: Install JDK
+    apt:
+      name: "default-jdk={{ jdk_version }}+exp1"
+      update_cache: yes
+  - name: Get JDK Version
+    shell: java --version | grep -m 1 -i openjdk
+    register: installed_jdk_version
+  - name: Install pre-reqs to build graphviz
+    apt:
+      name: libcairo2-dev, libexpat-dev, libfreetype-dev, libgd-dev, fontconfig-config, libglib2.0-dev, libgtk2.0-dev, libpng-dev, zlib1g-dev, libsdl-pango-dev, libgts-bin, libgtk-3-dev, libgtkglext1-dev, glade, freeglut3-dev, autoconf, automake, bison, flex, ghostscript, libtool, pkg-config, swig
+      update_cache: yes  
+  - name: Expand source files archive
+    unarchive:
+      src: /home/kasm-default-profile/install_files/graphviz-2.50.0.tar.gz
+      dest: /home/kasm-default-profile/install_files/
+      remote_src: yes
+      creates: /home/kasm-default-profile/install_files/graphviz-2.50.0/README
+  - name: Build graphviz
+    shell: 
+      cmd: ./configure --enable-perl=no && make > /tmp/graphviz_build_output.txt 2>&1 && make install
+      chdir: /home/kasm-default-profile/install_files/graphviz-2.50.0/
+      executable: /bin/bash    
+  - name: Get graphviz version
+    shell: dot -V
+    register: installed_graphviz_version
+
+-
+  # install PySysML2
+  hosts: localhost
+  connection: local
+  tasks:
+  - name: Clone PySysML2 Repo
+    shell:
+      chdir: /home/kasm-default-profile/
+      cmd: git clone https://github.com/DAF-Digital-Transformation-Office/PySysML2.git
+      creates: /home/kasm-default-profile/PySysML2/
+  - name: Install PySyML2
+    shell:
+      chdir: /home/kasm-default-profile/PySysML2/
+      cmd: pip install . --break-system-packages
+
+
 # Three dots indicate the end of a YAML document
 ...

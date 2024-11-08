@@ -1,4 +1,4 @@
-# Mach 30 Python Workspace (Kasm Image)
+# SysML v2 Textual Notation Workspace (Kasm Image)
 
 ## Introduction
 
@@ -13,9 +13,12 @@ This repo provides a workspace for SysML v2 textual notation modeling based on t
     - [Jupyter Notebook](https://jupyter.org/)
     - [Voilà](https://voila.readthedocs.io/en/stable/index.html)
     - [Pint](https://pint.readthedocs.io/en/stable/)
+    - [PySysML2](https://github.com/DAF-Digital-Transformation-Office/PySysML2)
 - VS Code with the following extensions (note, auto-updates are disabled)
     - [Python extension by Microsoft](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
     - [SysIDE CE](https://marketplace.visualstudio.com/items?itemName=sensmetry.sysml-2ls)
+- OpenJDK 1.21-75
+- GraphViz 2.50.0
 
 ## How to Use this Repo
 
