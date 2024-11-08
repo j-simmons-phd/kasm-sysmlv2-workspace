@@ -19,6 +19,7 @@ This repo provides a workspace for SysML v2 textual notation modeling based on t
     - [SysIDE CE](https://marketplace.visualstudio.com/items?itemName=sensmetry.sysml-2ls)
 - OpenJDK 1.21-75
 - GraphViz 2.50.0
+- [PySysML2](https://github.com/DAF-Digital-Transformation-Office/PySysML2) from DAF Digital Transformation Office
 
 ## How to Use this Repo
 
